@@ -43,11 +43,6 @@ services:
       - '{{ logos_node_blockchain_blend_port }}:{{ logos_node_blockchain_blend_port }}/udp'
       - '{{ logos_node_blockchain_api_port }}:{{ logos_node_blockchain_api_port }}/tcp'
 {% endif %}
-{% if logos_node_blockchain_enabled | bool %}
-      - '{{ logos_node_blockchain_swarm_port }}:{{ logos_node_blockchain_swarm_port }}/udp'
-      - '{{ logos_node_blockchain_blend_port }}:{{ logos_node_blockchain_blend_port }}/udp'
-      - '{{ logos_node_blockchain_api_port }}:{{ logos_node_blockchain_api_port }}/tcp'
-{% endif %}
 {% if logos_node_metrics_enabled | bool %}
       - '{{ logos_node_metrics_port }}:{{ logos_node_metrics_port }}/tcp'
 {% endif %}

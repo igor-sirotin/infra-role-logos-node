@@ -61,7 +61,7 @@ logos_node_delivery_kad_bootstrap_nodes:
   - '/dns4/node2.example.com/tcp/30303/p2p/16Uiu2HAm...'
 ```
 
-RLN is loaded as `liblogos_rln_module` before the delivery module and configured through the delivery module's presets file. The node config has no `preset`, so the file sets the `""` entry:
+RLN is configured through the delivery module's presets file; the delivery module loads `liblogos_rln_module` itself. The node config has no `preset`, so the file sets the `""` entry:
 ```yaml
 logos_node_delivery_rln_enabled: true
 logos_node_delivery_rln_validation_enabled: false
