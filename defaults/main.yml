@@ -79,6 +79,13 @@ logos_node_delivery_store_retention_policy: 'size:1GB'
 # Kademlia bootstrap nodes
 logos_node_delivery_kad_bootstrap_nodes: []
 
+# RLN
+logos_node_delivery_rln_enabled: false
+logos_node_delivery_rln_validation_enabled: false
+logos_node_delivery_rln_registry_id: ''
+logos_node_delivery_rln_epoch_size_sec: 0
+logos_node_delivery_rln_sequencer_url: ''
+
 # --- Storage module ---
 
 # Network

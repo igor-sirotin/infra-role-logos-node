@@ -7,6 +7,10 @@ until logosctl status > /dev/null 2>&1; do
   sleep 1
 done
 
+{% if logos_node_delivery_enabled | bool and logos_node_delivery_rln_enabled | bool %}
+logosctl module load liblogos_rln_module || echo "WARNING: failed to load liblogos_rln_module"
+
+{% endif %}
 {% for module in logos_node_base_modules + logos_node_modules %}
 logosctl module load {{ module }} || echo "WARNING: failed to load {{ module }}"
 {% endfor %}

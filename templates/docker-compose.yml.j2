@@ -57,6 +57,10 @@ services:
     environment:
 {% if logos_node_delivery_enabled | bool %}
       STORE_DB_URL: '{{ logos_node_delivery_store_db_url }}'
+{% if logos_node_delivery_rln_enabled | bool %}
+      LOGOS_DELIVERY_RLN_PRESETS: '/conf/rln_presets.json'
+      LEZ_RLN_SEQUENCER: '{{ logos_node_delivery_rln_sequencer_url }}'
+{% endif %}
 {% endif %}
 {% if logos_node_blockchain_enabled | bool %}
       LOGOS_BLOCKCHAIN_DEPLOYMENT: '{{ logos_node_blockchain_deployment }}'

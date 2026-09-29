@@ -61,6 +61,16 @@ logos_node_delivery_kad_bootstrap_nodes:
   - '/dns4/node2.example.com/tcp/30303/p2p/16Uiu2HAm...'
 ```
 
+RLN is loaded as `liblogos_rln_module` before the delivery module and configured through the delivery module's presets file. The node config has no `preset`, so the file sets the `""` entry:
+```yaml
+logos_node_delivery_rln_enabled: true
+logos_node_delivery_rln_validation_enabled: false
+logos_node_delivery_rln_registry_id: 'logos:testnet:<64 hex>'
+logos_node_delivery_rln_epoch_size_sec: 600
+logos_node_delivery_rln_sequencer_url: 'https://testnet.lez.logos.co/'
+```
+The image must be built with `RLN_VERSION`.
+
 Websocket with TLS:
 ```yaml
 logos_node_delivery_websocket_enabled: true
